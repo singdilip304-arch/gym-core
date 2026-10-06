@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { GymDataProvider } from './context/GymDataContext';
@@ -65,7 +65,7 @@ export function App() {
     <ThemeProvider>
       <AuthProvider>
         <GymDataProvider>
-          <BrowserRouter>
+          <HashRouter>
             <ScrollToTop />
             <Routes>
               {/* Public Routes with Navbar and Footer */}
@@ -117,7 +117,7 @@ export function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
             <FloatingConversationButton />
-          </BrowserRouter>
+          </HashRouter>
         </GymDataProvider>
       </AuthProvider>
     </ThemeProvider>
